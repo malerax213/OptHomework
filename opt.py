@@ -13,20 +13,21 @@ from bs4 import BeautifulSoup
 
 class Client(object):
 
-    """Web Client, for www.udl.Created
-    Downloads www.udl.cat main page to parse
-    for agenda items"""
+    """
+    Downloads the page and prints the daily book name
+    """
 
     def get_web(self, url):
         """
-        Retrieves an HTML URL returns, HTML
+        Retrieves an HTML URL
+        Returns HTML
         """
         f = urllib2.urlopen(url)
         html = f.read()
         f.close()
         return html
 
-    def search_test(self, html):
+    def search_parse(self, html):
         """
         Parses an html page
         """
@@ -38,24 +39,18 @@ class Client(object):
             title = str(element.find("h2"))
             newTitle = title.replace("\t","").replace("<h2>","") \
                         .replace("\n","").replace("</h2>","")
-
-
-            #print title
-            #if newTitle:
-                #newTitle = newTitle.text
             resultats.append(newTitle)
+
         return resultats
 
     def run(self):
         """
-        Retrieves the name of the daily book from
-        www.packtpub.com/packt/offers/free-learning and prints it
+        Prints the name of the daily book from
+        www.packtpub.com/packt/offers/free-learning
         """
         html = self.get_web("http://www.packtpub.com/packt/offers/free-learning/")
-
-        resultat = self.search_test(html)
+        resultat = self.search_parse(html)
         print str(resultat[0])
-
 
 
 if __name__ == "__main__":
