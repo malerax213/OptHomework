@@ -22,4 +22,4 @@ Requirements
 
 • Code must work.
 
-Scoring: If all requeriments are met students get0.5 extra pointsfor Practice 1.
+Scoring: If all requeriments are met students get 0.5 extra points for Practice 1.
