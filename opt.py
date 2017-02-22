@@ -30,16 +30,31 @@ class Client(object):
         """
         Parses an html page
         """
-        
+        soup = BeautifulSoup(html,'html.parser')
+        elements = soup.find_all("div","dotd-title")
+        resultats = []
+
+        for element in elements:
+            title = str(element.find("h2"))
+            newTitle = title.replace("\t","").replace("<h2>","") \
+                        .replace("\n","").replace("</h2>","")
+
+
+            #print title
+            #if newTitle:
+                #newTitle = newTitle.text
+            resultats.append(newTitle)
+        return resultats
 
     def run(self):
         """
-        Retrieves list of announces from
+        Retrieves the name of the daily book from
         www.packtpub.com/packt/offers/free-learning and prints it
         """
         html = self.get_web("http://www.packtpub.com/packt/offers/free-learning/")
+
         resultat = self.search_test(html)
-        print resultat
+        print str(resultat[0])
 
 
 
