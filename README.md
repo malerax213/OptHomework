@@ -15,8 +15,11 @@ Your goal is to build a simple python application, using the following libraries
 To scrape some text, namely the book title, from the webpage, and print it (with the ultimate goal of using any notification method to send the user the information).
 
 Requirements
+
 • Code must be developed entirely on github.com.
-• Code must follow good practice and good python conventions:  variable
-naming, identation, documentation, etc.
+
+• Code must follow good practice and good python conventions:  variable naming, identation, documentation, etc.
+
 • Code must work.
+
 Scoring: If all requeriments are met students get0.5 extra pointsfor Practice 1.
